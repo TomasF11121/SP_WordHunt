@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.wordhunt.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_obtiaznostFragment"
+            app:destination="@id/obtiaznostFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_HodnotenieFragment"
+            app:destination="@id/hodnotenieFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/obtiaznostFragment"
+        android:name="com.example.wordhunt.ObtiaznostFragment"
+        android:label="Obtiaznost"
+        tools:layout="@layout/fragment_obtiaznost">
+        <action
+            android:id="@+id/action_obtiaznostFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.wordhunt.GameFragment"
+        android:label="GameFragment"
+        tools:layout="@layout/fragment_game">
+        <argument
+            android:name="obtiaznost"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_gameFragment_to_endGameFragment"
+            app:destination="@id/endGameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/endGameFragment"
+        android:name="com.example.wordhunt.EndGameFragment"
+        android:label="EndGameFragment"
+        tools:layout="@layout/fragment_end_game">
+        <action
+            android:id="@+id/action_endGameFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_endGameFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/hodnotenieFragment"
+        android:name="com.example.wordhunt.HodnotenieFragment"
+        android:label="Hodnotenie"
+        tools:layout="@layout/fragment_hodnotenie">
+    </fragment>
+
+</navigation>
